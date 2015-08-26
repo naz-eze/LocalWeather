@@ -10,8 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var buttonRef: UIButton!
+    
+    @IBAction func getWeatherDetails(sender: UIButton) {
+    
+    }
+    
+    private func setButtonProperties() -> Void {
+        buttonRef.layer.cornerRadius = 10;
+        buttonRef.layer.borderWidth = 0.75;
+        buttonRef.backgroundColor = UIColor.clearColor()
+        buttonRef.layer.borderColor = UIColor.lightGrayColor().CGColor
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setButtonProperties()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
