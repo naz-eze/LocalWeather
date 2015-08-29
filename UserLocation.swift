@@ -12,7 +12,10 @@ import CoreLocation
 class UserLocation: NSObject, CLLocationManagerDelegate {
     
     lazy var locationManager = CLLocationManager()
-    lazy var weatherService = WeatherService()
+    
+    var parent: AnyObject?
+    private var longitude: String?
+    private var latitude: String?
     
     func getLocationDetails() -> Void {
         locationManager.delegate = self
@@ -28,14 +31,19 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var userLocation: CLLocationCoordinate2D = manager.location.coordinate
         
-        let longitude = userLocation.longitude.description
-        let latitude = userLocation.latitude.description
+        longitude = userLocation.longitude.description
+        latitude = userLocation.latitude.description
         locationManager.stopUpdatingLocation()
-
-        NSLog("User's coordinates - lat:\(latitude), lon:\(longitude)")
-        weatherService.getWeatherDetails(longitude, userLatitude: latitude)
+        NSLog("User's coordinates - lat:\(latitude!), lon:\(longitude!)")
+        self.callParent()
     }
 
-    
+    private func callParent() -> Void {
+        if parent is ViewController {
+            var vcParent = parent as! ViewController
+            vcParent.foundUserLocation(longitude!, latitude: latitude!)
+        }
+        
+    }
     
 }
