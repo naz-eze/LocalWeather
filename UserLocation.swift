@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 nazchinaza. All rights reserved.
 //
 
-import UIKit
 import Foundation
 import CoreLocation
 
