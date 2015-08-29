@@ -23,7 +23,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var buttonRef: UIButton!
     
     lazy var userLocation = UserLocation()
-        
+    lazy var weatherService = WeatherService()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setButtonProperties()
@@ -36,7 +38,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func runApp(sender: UIButton) {
-       userLocation.getLocationDetails()
+        userLocation.parent = self
+        userLocation.getLocationDetails()
+    }
+    
+    func foundUserLocation(longitude: String, latitude: String) -> Void {
+        weatherService.getWeatherDetails(longitude, userLatitude: latitude)
     }
     
     private func setButtonProperties() -> Void {
