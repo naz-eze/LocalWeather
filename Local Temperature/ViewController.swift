@@ -11,7 +11,17 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var forecastLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var visibilityLabel: UILabel!
+    @IBOutlet weak var sunriseLabel: UILabel!
+    @IBOutlet weak var sunsetLabel: UILabel!
     @IBOutlet weak var buttonRef: UIButton!
+    
     lazy var userLocation = UserLocation()
         
     override func viewDidLoad() {
@@ -25,7 +35,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func runApp(sender: UIButton) {
        userLocation.getLocationDetails()
     }
@@ -36,8 +45,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         buttonRef.backgroundColor = UIColor.clearColor()
         buttonRef.layer.borderColor = UIColor.lightGrayColor().CGColor
     }
-   
-
 
 }
 
