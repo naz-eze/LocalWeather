@@ -7,13 +7,27 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
     @IBOutlet weak var buttonRef: UIButton!
+    lazy var userLocation = UserLocation()
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setButtonProperties()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
     
-    @IBAction func getWeatherDetails(sender: UIButton) {
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
+    
+    @IBAction func runApp(sender: UIButton) {
+       userLocation.getLocationDetails()
     }
     
     private func setButtonProperties() -> Void {
@@ -22,17 +36,7 @@ class ViewController: UIViewController {
         buttonRef.backgroundColor = UIColor.clearColor()
         buttonRef.layer.borderColor = UIColor.lightGrayColor().CGColor
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setButtonProperties()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
 
 
 }
