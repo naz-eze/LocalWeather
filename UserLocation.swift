@@ -12,6 +12,7 @@ import CoreLocation
 class UserLocation: NSObject, CLLocationManagerDelegate {
     
     lazy var locationManager = CLLocationManager()
+    lazy var weatherService = WeatherService()
     
     func getLocationDetails() -> Void {
         locationManager.delegate = self
@@ -30,6 +31,11 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
         let longitude = userLocation.longitude.description
         let latitude = userLocation.latitude.description
         locationManager.stopUpdatingLocation()
+
+        NSLog("User's coordinates - lat:\(latitude), lon:\(longitude)")
+        weatherService.getWeatherDetails(longitude, userLatitude: latitude)
     }
 
+    
+    
 }
