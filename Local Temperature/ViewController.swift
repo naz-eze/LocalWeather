@@ -11,13 +11,11 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
-    
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var forecastLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var windSpeedLabel: UILabel!
-    @IBOutlet weak var visibilityLabel: UILabel!
     @IBOutlet weak var sunriseLabel: UILabel!
     @IBOutlet weak var sunsetLabel: UILabel!
     @IBOutlet weak var buttonRef: UIButton!
@@ -42,8 +40,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         userLocation.getLocationDetails()
     }
     
-    func foundUserLocation(longitude: String, latitude: String) -> Void {
+    func foundUserLocation(longitude: String, latitude: String) -> Void { //TODO: Refactor to event listener
+        weatherService.parent = self
         weatherService.getWeatherDetails(longitude, userLatitude: latitude)
+    }
+    
+    func didGetWeatherDetails(weatherDetails: WeatherDetails) -> Void { //TODO: Refactor to event listener
+            self.locationLabel.text = weatherDetails.location
+            self.temperatureLabel.text = String(stringInterpolationSegment: weatherDetails.averageTemperature)
+            self.forecastLabel.text = weatherDetails.forecast
+            self.humidityLabel.text = String(stringInterpolationSegment: weatherDetails.humidity)
+            self.windSpeedLabel.text = String(stringInterpolationSegment: weatherDetails.windspeed)
+            self.sunriseLabel.text = weatherDetails.sunrise
+            self.sunsetLabel.text = weatherDetails.sunset
     }
     
     private func setButtonProperties() -> Void {
