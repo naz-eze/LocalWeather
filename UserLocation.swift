@@ -38,7 +38,7 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
         self.callParent()
     }
 
-    private func callParent() -> Void {
+    private func callParent() -> Void { //TODO: Refactor to event trigger
         if parent is ViewController {
             var vcParent = parent as! ViewController
             vcParent.foundUserLocation(longitude!, latitude: latitude!)
