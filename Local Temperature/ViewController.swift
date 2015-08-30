@@ -46,13 +46,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func didGetWeatherDetails(weatherDetails: WeatherDetails) -> Void { //TODO: Refactor to event listener
+        dispatch_async(dispatch_get_main_queue()) {
             self.locationLabel.text = weatherDetails.location
             self.temperatureLabel.text = String(stringInterpolationSegment: weatherDetails.averageTemperature)
             self.forecastLabel.text = weatherDetails.forecast
-            self.humidityLabel.text = String(stringInterpolationSegment: weatherDetails.humidity)
-            self.windSpeedLabel.text = String(stringInterpolationSegment: weatherDetails.windspeed)
+            self.humidityLabel.text = String(stringInterpolationSegment: weatherDetails.humidity) + "%"
+            self.windSpeedLabel.text = String(stringInterpolationSegment: weatherDetails.windspeed) + "meter/sec"
             self.sunriseLabel.text = weatherDetails.sunrise
             self.sunsetLabel.text = weatherDetails.sunset
+            self.buttonRef.enabled = true
+        }
     }
     
     private func setButtonProperties() -> Void {
