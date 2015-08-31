@@ -20,6 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var todaysDate: UILabel!
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
     
     @IBOutlet weak var forecastIcon: UIImageView!
 
@@ -71,6 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         view.layer.insertSublayer(backgroundLayer, atIndex: 0)
     }
     
+   
     func getTodaysDate() -> String {
         var date = NSDate()
         var dateFormatter = NSDateFormatter()
@@ -94,6 +96,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.tempSegmentControl.selectedSegmentIndex = 0
             
             self.todaysDate.text = self.getTodaysDate()
+            self.lastUpdatedLabel.text = weatherDetails.lastUpdated
             self.forecastIcon.image = UIImage(named: weatherDetails.weatherIcon)
             self.locationLabel.text = weatherDetails.location
             self.temperatureLabel.text = String(format: "%.0f", weatherDetails.averageTemperature.celcius)
