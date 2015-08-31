@@ -54,7 +54,7 @@ class WeatherService: NSObject {
             weatherIcon: weather[0].valueForKey("icon") as! String,
             sunrise: humanTimeFromUnixTime(sys["sunrise"] as! Double, format: "HH:MM"),
             sunset: humanTimeFromUnixTime(sys["sunset"] as! Double, format: "HH:MM"),
-            lastUpdated: humanTimeFromUnixTime(weatherValues["dt"] as! Double, format: "dd-MMM-YYYY, hh:mm")
+            lastUpdated: humanTimeFromUnixTime(weatherValues["dt"] as! Double, format: "dd-MMM-YYYY, HH:MM")
         )
         weatherDetails.logDetails()
         self.callParent(weatherDetails)
