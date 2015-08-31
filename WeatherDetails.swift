@@ -16,7 +16,7 @@ extension Double {
         return self - 272.15
     }
     var fahrenheit: Double {
-        return self - 457.87
+        return (self - 273.15)*1.8000 + 32.00
     }
 }
 
