@@ -54,7 +54,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.windSpeedLabel.text = String(stringInterpolationSegment: weatherDetails.windspeed) + "meter/sec"
             self.sunriseLabel.text = weatherDetails.sunrise
             self.sunsetLabel.text = weatherDetails.sunset
-            self.buttonRef.enabled = true
         }
     }
     
