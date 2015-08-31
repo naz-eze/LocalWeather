@@ -8,6 +8,19 @@
 
 import Foundation
 
+extension Double {
+    var kelvin: Double {
+        return self
+    }
+    var celcius: Double {
+        return self - 272.15
+    }
+    var fahrenheit: Double {
+        return self - 457.87
+    }
+}
+
+
 struct WeatherDetails {
     
     var location: String
