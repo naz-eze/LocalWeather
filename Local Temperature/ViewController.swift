@@ -83,11 +83,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func setDisplayValues(weatherDetails: WeatherDetails) -> Void {
         dispatch_async(dispatch_get_main_queue()) {
             self.loading.stopAnimating()
+            self.tempSegmentControl.selectedSegmentIndex = 0
+            
+            self.forecastIcon.image = UIImage(named: weatherDetails.weatherIcon)
             self.locationLabel.text = weatherDetails.location
             self.temperatureLabel.text = String(format: "%.0f", weatherDetails.averageTemperature.celcius)
             self.forecastLabel.text = weatherDetails.forecast
             self.humidityLabel.text = String(format: "%.1f", weatherDetails.humidity)
-            self.windSpeedLabel.text = String(format: "%.1f", weatherDetails.windspeed)
+            self.windSpeedLabel.text = String(format: "%.0f", weatherDetails.windspeed * 2.23694)+"MPH"
             self.sunriseLabel.text = weatherDetails.sunrise
             self.sunsetLabel.text = weatherDetails.sunset
         }
