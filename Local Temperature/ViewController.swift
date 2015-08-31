@@ -50,14 +50,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func reload(sender: UIButton) {
-        self.loading.startAnimating()
-        userLocation.parent = self
-        userLocation.getLocationDetails()
+        runApp()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         refresh()
+        runApp()
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,6 +71,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         view.layer.insertSublayer(backgroundLayer, atIndex: 0)
     }
     
+    func runApp() -> Void {
+        self.loading.startAnimating()
+        userLocation.parent = self
+        userLocation.getLocationDetails()
+    }
    
     func getTodaysDate() -> String {
         var date = NSDate()
