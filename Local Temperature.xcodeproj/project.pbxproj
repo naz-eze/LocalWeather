@@ -13,6 +13,11 @@
 		692910771B8E19720054A892 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 692910761B8E19720054A892 /* Images.xcassets */; };
 		6929107A1B8E19720054A892 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692910781B8E19720054A892 /* LaunchScreen.xib */; };
 		692910861B8E19720054A892 /* Local_TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692910851B8E19720054A892 /* Local_TemperatureTests.swift */; };
+		695409F11B9263C90041F691 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695409F01B9263C90041F691 /* UserLocation.swift */; };
+		695D8BEC1B919EEF003125AE /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D8BEB1B919EEF003125AE /* WeatherService.swift */; };
+		6992CDD31B9365CF0044E743 /* WeatherDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6992CDD21B9365CF0044E743 /* WeatherDetails.swift */; };
+		69B7BB671B9100C4000603EE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B7BB661B9100C4000603EE /* CoreLocation.framework */; };
+		69D8D0441B9450F80056BD34 /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D8D0431B9450F80056BD34 /* Colour.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		6929107F1B8E19720054A892 /* Local TemperatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Local TemperatureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		692910841B8E19720054A892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		692910851B8E19720054A892 /* Local_TemperatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local_TemperatureTests.swift; sourceTree = "<group>"; };
+		695409F01B9263C90041F691 /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		695D8BEB1B919EEF003125AE /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		6992CDD21B9365CF0044E743 /* WeatherDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetails.swift; sourceTree = "<group>"; };
+		69B7BB661B9100C4000603EE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		69D8D0431B9450F80056BD34 /* Colour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colour.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B7BB671B9100C4000603EE /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +70,11 @@
 		692910611B8E19720054A892 = {
 			isa = PBXGroup;
 			children = (
+				69D8D0431B9450F80056BD34 /* Colour.swift */,
+				6992CDD21B9365CF0044E743 /* WeatherDetails.swift */,
+				695409F01B9263C90041F691 /* UserLocation.swift */,
+				695D8BEB1B919EEF003125AE /* WeatherService.swift */,
+				69B7BB661B9100C4000603EE /* CoreLocation.framework */,
 				6929106C1B8E19720054A892 /* Local Temperature */,
 				692910821B8E19720054A892 /* Local TemperatureTests */,
 				6929106B1B8E19720054A892 /* Products */,
@@ -212,6 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				695D8BEC1B919EEF003125AE /* WeatherService.swift in Sources */,
+				695409F11B9263C90041F691 /* UserLocation.swift in Sources */,
+				6992CDD31B9365CF0044E743 /* WeatherDetails.swift in Sources */,
+				69D8D0441B9450F80056BD34 /* Colour.swift in Sources */,
 				692910721B8E19720054A892 /* ViewController.swift in Sources */,
 				692910701B8E19720054A892 /* AppDelegate.swift in Sources */,
 			);
@@ -405,6 +425,7 @@
 				6929108B1B8E19720054A892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6929108C1B8E19720054A892 /* Build configuration list for PBXNativeTarget "Local TemperatureTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +434,7 @@
 				6929108E1B8E19720054A892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
