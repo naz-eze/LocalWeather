@@ -47,14 +47,14 @@ class WeatherService: NSObject {
         var weatherDetails = WeatherDetails(
             location: "\(city), \(country)",
             averageTemperature: main["temp"] as! Double,
-            forecast: (weather[0].valueForKey("main") as! String) + ", " + (weather[0].valueForKey("description") as! String),
+            forecast: (weather[0].valueForKey("main") as! String) + " - " + (weather[0].valueForKey("description") as! String),
             humidity:  main["humidity"] as! Double,
             windspeed: wind["speed"] as! Double,
             windDirection: wind["deg"] as! Double,
             weatherIcon: weather[0].valueForKey("icon") as! String,
-            sunrise: humanTimeFromUnixTime(sys["sunrise"] as! Double, format: "hh:mm a"),
-            sunset: humanTimeFromUnixTime(sys["sunset"] as! Double, format: "hh:mm a"),
-            lastUpdated: humanTimeFromUnixTime(weatherValues["dt"] as! Double, format: "dd-MMM-YYYY, hh:mm a")
+            sunrise: humanTimeFromUnixTime(sys["sunrise"] as! Double, format: "HH:MM"),
+            sunset: humanTimeFromUnixTime(sys["sunset"] as! Double, format: "HH:MM"),
+            lastUpdated: humanTimeFromUnixTime(weatherValues["dt"] as! Double, format: "dd-MMM-YYYY, hh:mm")
         )
         weatherDetails.logDetails()
         self.callParent(weatherDetails)
