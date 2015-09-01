@@ -1,5 +1,5 @@
-LocalWeather IOS8 Application.
-First ever IOS Application - so please don’t judge if my code looks stringy :D
+LocalWeather IOS8 Application.<br />
+First ever IOS Application - so please don’t judge if my code looks stringy…<br />
 Written in Swift.
 
 
