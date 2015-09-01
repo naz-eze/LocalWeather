@@ -14,11 +14,11 @@ class Colours: NSObject {
     //TODO: These values should ideally be set externally in some sort of properties files
     //      to allow for easy maintenance/configuration
     
-    private let freezingTempRange = -100...0
+    private let freezingTempRange = -90...0 //coldest temperature recorded
     private let coldTempRange = 1...13
     private let normalTempTange = 14...20
     private let warmTempRange = 21...30
-    private let boilingTempRange = 31...100
+    private let boilingTempRange = 31...60 //hottest temperature recorded
     
     private let coralBlue = RGB(red: 69, green: 81, blue: 171)
     private let royalBlue = RGB(red: 65, green: 105, blue: 225)
