@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FA738DE5-A61B-4925-8BBF-F9B1B97AF739</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LocalWeather</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2779D5B7C42827D689BE5ACB3969F363746F5CDE</key>
+		<string>https://github.com/nazcompile/LocalTemperature.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LocalWeather.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2779D5B7C42827D689BE5ACB3969F363746F5CDE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nazcompile/LocalTemperature.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2779D5B7C42827D689BE5ACB3969F363746F5CDE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2779D5B7C42827D689BE5ACB3969F363746F5CDE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Local%20Temperature</string>
+		</dict>
+	</array>
+</dict>
+</plist>
