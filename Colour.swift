@@ -52,7 +52,7 @@ class Colours: NSObject {
         colourGradient.locations = [ 0.0, 1.0]
     }
     
-    func createBackgroundImage(weatherDetails: WeatherDetails) -> Void {
+    func createBackgroundColour(weatherDetails: WeatherDetails) -> Void {
         
         var tempValue = Int (weatherDetails.averageTemperature.celcius)
         
