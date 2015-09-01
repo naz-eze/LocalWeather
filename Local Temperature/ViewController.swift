@@ -55,7 +55,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        refresh()
+        loadBackground()
         runApp()
     }
     
@@ -64,7 +64,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func refresh() -> Void {
+    func loadBackground() -> Void {
+        colours.createGradient()
         view.backgroundColor = UIColor.clearColor()
         var backgroundLayer = colours.colourGradient
         backgroundLayer.frame = view.frame
@@ -90,12 +91,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func didGetWeatherDetails(weatherDetails: WeatherDetails) -> Void { //TODO: Refactor to event listener
-        self.weatherDetails = weatherDetails
-        self.setDisplayValues(weatherDetails)
+        dispatch_async(dispatch_get_main_queue()) {
+            self.weatherDetails = weatherDetails
+            self.colours.createBackgroundColour(weatherDetails)
+            self.loadBackground()
+            self.setDisplayValues(weatherDetails)
+        }
     }
     
     func setDisplayValues(weatherDetails: WeatherDetails) -> Void {
-        dispatch_async(dispatch_get_main_queue()) {
             self.loading.stopAnimating()
             self.tempSegmentControl.selectedSegmentIndex = 0
             
@@ -109,7 +113,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.windSpeedLabel.text = String(format: "%.0f", weatherDetails.windspeed * 2.23694)+"MPH"
             self.sunriseLabel.text = weatherDetails.sunrise
             self.sunsetLabel.text = weatherDetails.sunset
-        }
+        
     }
 
 }
