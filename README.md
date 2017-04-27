@@ -13,5 +13,5 @@ How does it work -
 
 ** Currently only tested on the iPhone5. More tests on other screen sizes to follow
 
-![alt tag] (https://github.com/nazcompile/LocalWeather/blob/master/App%20screenshots/medium_weather_celcius.png)
+![alt text] (https://github.com/nazcompile/LocalWeather/blob/master/App%20screenshots/medium_weather_celcius.png, "Sample App Screentshot")
 
